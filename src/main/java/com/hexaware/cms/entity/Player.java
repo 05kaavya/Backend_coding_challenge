@@ -9,6 +9,8 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+// Player entity is created to connect the project with database.
+
 @Entity
 @Data
 @NoArgsConstructor

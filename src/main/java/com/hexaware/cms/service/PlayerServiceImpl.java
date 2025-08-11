@@ -1,27 +1,27 @@
 package com.hexaware.cms.service;
 
-
-
 import com.hexaware.cms.dto.PlayerDto;
 import com.hexaware.cms.entity.Player;
 import com.hexaware.cms.repository.PlayerRepository;
 import com.hexaware.cms.service.IPlayerService;
-//import com.hexaware.cms.exception.ResourceNotFoundException;
-
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+/**
+ * Service implementation for Player-related operations.
+ * This class handles the business logic for managing players
+ * and interacts with the repository layer to perform CRUD operations.
+ */
 
 @Service
 public class PlayerServiceImpl implements IPlayerService {
 
 	@Autowired
-	PlayerRepository repo;
+	PlayerRepository repo;//Repository for database operations 
 	
-	private Player mapDTOToEntity(PlayerDto dto, Player player) {
+	private Player mapDTOToEntity(PlayerDto dto, Player player) { //Mapping entity to dto and saving in database
 		if(player== null) {player=new Player();}
 		player.setPlayerId(dto.getPlayerId());
 		player.setPlayerName(dto.getPlayerName());
@@ -74,5 +74,22 @@ public class PlayerServiceImpl implements IPlayerService {
 		repo.deleteById((int) playerId);
 		return "Deleted Successfully";
 	}
+	
+	 @Override
+	    public List<Player> getPlayersByName(String playerName) {
+	        return repo.findByPlayerName(playerName);
+	    }
+	 
+	 @Override
+	    public List<Player> getPlayersByRole(String role) {
+	        return repo.findByRole(role);
+	    }
+	 
+	 @Override
+	    public List<Player> getPlayersStartingWith(String prefix) {
+		 return repo.findPlayersByNameStartingWith(prefix);
+		 
+	       // return repo.findByPlayerNameStartingWithIgnoreCase(prefix);
+	    }
 
 }

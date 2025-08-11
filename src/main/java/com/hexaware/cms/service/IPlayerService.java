@@ -11,6 +11,9 @@ public interface IPlayerService {
 	public Player getPlayerById(int playerId);
 	public Player updatePlayer(int playerId, PlayerDto dto);
 	public String deletePlayerById(int playerId);
+	public List<Player> getPlayersByName(String playerName);
+	public List<Player> getPlayersByRole(String role);
+	public List<Player> getPlayersStartingWith(String prefix);
 }
 
 	

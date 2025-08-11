@@ -9,11 +9,17 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * PlayerDto carries data between the controller and service layers.
+ * Use @NotBlank, @NotNull, @Pattern, etc., to enforce input constraints.
+ * Ensure DTO fields align with API request/response needs.
+ */  
+
 @Data
 @NoArgsConstructor
 public class PlayerDto {
 	
-	 private int playerId;
+	    private int playerId;
 
 	    @NotBlank(message = "Player name is required")
 	    @Pattern(regexp = "^[A-Za-z ]{3,50}$", message = "Name must be 3-50 letters only")
@@ -33,6 +39,8 @@ public class PlayerDto {
 	    private int totalMatches;
 
 	    @NotBlank(message = "Team name is required")
+	    @Pattern(regexp = "^[A-Za-z0-9 ]{3,50}$", 
+        message = "Team name must be 3-50 characters long and contain only letters, numbers, and spaces")
 	    private String teamName;
 
 	    @NotBlank(message = "Country is required")
