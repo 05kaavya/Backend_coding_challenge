@@ -38,16 +38,16 @@ This project demonstrates the use of **Spring Boot**, **Spring Data JPA**, **RES
 
 | Method | Endpoint                         | Description |
 |--------|-----------------------------------|-------------|
-| GET    | `/players/getall`                | Get all players |
-| GET    | `/players/{playerId}`            | Get player by ID |
-| GET    | `/players/name/{playerName}`     | Get players by name |
-| GET    | `/players/role/{role}`           | Get players by role |
-| GET    | `/players/team/{teamName}`       | Get players by team name |
-| GET    | `/players/country/{country}`     | Get players by country |
-| GET    | `/players/prefix/{prefix}`       | Get players whose names start with prefix |
-| POST   | `/players/add`                   | Add new player |
-| PUT    | `/players/{playerId}`            | Update player |
-| DELETE | `/players/{playerId}`            | Delete player |
+| GET    | `api/players/getall`                | Get all players |
+| GET    | `api/players/get/{playerId}`        | Get player by ID |
+| GET    | `api/players/name/{playerName}`     | Get players by name |
+| GET    | `api/players/role/{role}`           | Get players by role |
+| GET    | `api/players/team/{teamName}`       | Get players by team name |
+| GET    | `api/players/country/{country}`     | Get players by country |
+| GET    | `api/players/starts-with/{prefix}`  | Get players whose names start with prefix |
+| POST   | `api/players/add`                   | Add new player |
+| PUT    | `api/players/update/{playerId}`     | Update player |
+| DELETE | `api/players/delete/{playerId}`     | Delete player |
 
 ---
 
