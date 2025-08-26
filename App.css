@@ -1,0 +1,6 @@
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url("https://wallpapercave.com/wp/wp7852046.jpg") no-repeat center center/cover;
+}
+
