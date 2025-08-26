@@ -13,7 +13,7 @@ import java.util.List;
 //PlayerRestController handles CRUD operations for Player entities.
  
 
-
+@CrossOrigin(origins="http://localhost:3000/")
 @RestController
 @RequestMapping("/api/players")
 public class PlayerRestController {
